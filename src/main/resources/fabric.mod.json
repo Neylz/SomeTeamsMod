@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "SomeTeams",
-  "description": "Server side mod adding teams system",
+  "description": "Server side mod managing teams",
   "authors": [
     "Neylz"
   ],
@@ -19,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.neylz.someteams.Someteams"
+      "com.neylz.someteams.SomeTeams"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "someteams.mixins.json"
   ],
 
   "depends": {
