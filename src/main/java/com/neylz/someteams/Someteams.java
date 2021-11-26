@@ -1,5 +1,6 @@
 package com.neylz.someteams;
 
+import com.neylz.someteams.util.ModCommandRegister;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,5 +18,7 @@ public class SomeTeams implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		ModCommandRegister.registerCommands();
 	}
 }
