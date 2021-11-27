@@ -9,9 +9,13 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.neylz.someteams.util.IEntityDataSaver;
 import net.minecraft.command.argument.MessageArgumentType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.text.LiteralText;
+
+import org.spongepowered.asm.mixin.Mixin;
 
 import static com.mojang.brigadier.arguments.StringArgumentType.getString;
 import static com.mojang.brigadier.arguments.StringArgumentType.word;
@@ -35,6 +39,8 @@ public class JoinTeamCommand {
         LOGGER.info("Hello Fabric world!");
 
         //IEntityDataSaver player = (IEntityDataSaver)context.getSource().getPlayer();
+
+        final var test = new Team(null, "Test");
 
         context.getSource().sendFeedback(new LiteralText("Hello There RaysWorks Here !"), true);
 
