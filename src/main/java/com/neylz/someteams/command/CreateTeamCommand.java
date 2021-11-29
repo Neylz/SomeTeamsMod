@@ -17,18 +17,20 @@ import static com.neylz.someteams.SomeTeams.LOGGER;
 public class CreateTeamCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher, boolean dedicated) {
         LiteralCommandNode<ServerCommandSource> register = dispatcher.register(CommandManager.literal("steams")
-                .then(CommandManager.literal("new").executes(CreateTeamCommand::run)));
+                .then(CommandManager.literal("new")
+                        .executes( (c) -> run(
+                                c.getSource(),
+                                c.getSource().getServer().getCommandManager(),
+                                c.getSource().getName()
+                        ))));
     }
 
-    public static int run(CommandContext<ServerCommandSource> context) throws CommandSyntaxException {
-        IEntityDataSaver player = (IEntityDataSaver)context.getSource().getPlayer();
+    public static int run(ServerCommandSource source, CommandManager commandManager, String player_name) {
 
-        CommandManager commandManager = context.getSource().getServer().getCommandManager();
-        ServerCommandSource serverCommandSource = context.getSource();
-        commandManager.execute(serverCommandSource, "say a");
+        commandManager.execute(source, "say a");
 
 
-        LOGGER.info("new team!" + context.getInput());
+        LOGGER.info("new team!");
         return 1;
     }
 }
