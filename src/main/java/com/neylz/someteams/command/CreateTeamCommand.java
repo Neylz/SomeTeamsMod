@@ -10,6 +10,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.server.command.TeamCommand;
 import net.minecraft.text.LiteralText;
 
 import static com.neylz.someteams.SomeTeams.LOGGER;
@@ -25,12 +26,14 @@ public class CreateTeamCommand {
                         ))));
     }
 
-    public static int run(ServerCommandSource source, CommandManager commandManager, String player_name) {
+    public static int run(ServerCommandSource source, CommandManager commandManager, String player_name) throws CommandSyntaxException {
 
         commandManager.execute(source, "say a");
 
 
-        LOGGER.info("new team!");
+
+
+        LOGGER.info("command !");
         return 1;
     }
 }
