@@ -29,7 +29,7 @@ public class CreateTeamCommand {
     public static int run(ServerCommandSource source, CommandManager commandManager, String player_name) throws CommandSyntaxException {
 
 
-        commandManager.execute(source, "say f");
+        commandManager.execute(source, "say POURQUOI CA MARCHE PAS ????");
 
 
 
